@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+	<head>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script>
+			function explode(offset){
+				var layer2_offset = parseFloat($(".layer_two").css("top"));
+				var layer3_offset = parseFloat($(".layer_three").css("top"));
+				
+				$(".layer_two").css("top","-200px");
+				$(".layer_three").css("top","-550px");								
+			}
+		</script>
+		<style>
+			#exploded_phone{
+				display: block;
+				position: relative;
+				width: 100%;
+				height: 460px;
+				overflow: visible;			
+			}
+			
+			.layer_one{
+				height: 281px;
+				background: url(phone-layer-one.png) center center no-repeat;
+				z-index: 400;
+				top: 72px;
+				position:relative;
+			}
+			
+			.layer_two{
+				height: 376px;
+				background: url(phone-layer-two.png) center center no-repeat;
+				z-index: 200;
+				top: -250px;
+				-webkit-transition: top 0.8s ease-out;
+				-moz-transition: top 0.8s ease-out;
+				transition: top 0.8s ease-out;
+				position:relative;				
+			}
+			
+			.layer_three{
+				height: 454px;
+				background: url(phone-layer-three.png) center center no-repeat;
+				z-index: 100;
+				/*top: 23px;*/
+				top:-640px;
+				left: -6px;
+				-webkit-transition: top 0.8s ease-out;
+				-moz-transition: top 0.8s ease-out;
+				transition: top 0.8s ease-out;
+				position:relative;				
+			}						
+		</style>
+
+	</head>
+	
+	<body>
+		<button onclick="explode(30)">Explode</button>
+		<div id="exploded_phone">
+			<div class="layer_one"></div>
+			<div class="layer_two"></div>
+			<div class="layer_three"></div>
+		</div>
+	</body>
+	
+</html>
